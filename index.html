@@ -3,32 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pi-Student — Learn by building</title>
-  <meta name="description" content="Learn to code by building with Pi-Student.">
+  <title>Werkbord — A local-first remote control for coding agents</title>
+  <meta name="description" content="Werkbord runs on your computer, keeps your board, calendar and database local, and lets you steer Claude Code and Codex from your phone. No hosted backend, no account.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="hero" id="top">
-    <header class="site-header">
-      <a class="brand" href="#top"><span class="brand-mark">π</span><span>pi<span class="brand-dot">.</span>student</span></a>
-      <span class="status"><i></i> THE AGENTIC LEARNING ENVIRONMENT</span>
-    </header>
-    <section class="hero-content" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">LEARN BY BUILDING</p>
-        <h1 id="hero-title">Build skills.<br><em>Not just</em> software.</h1>
-        <p class="intro">A thoughtful coding agent that helps you understand the why, navigate the how, and ship what you imagined.</p>
-        <a class="button" href="workflow.html">Start learning <span>↗</span></a>
+  <header class="site-header">
+    <a class="brand" href="#top"><span class="brand-mark">W</span><span>werkbord</span></a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/micho8cho93/werkbord">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">LOCAL-FIRST · NO ACCOUNT · NO HOSTED BACKEND</p>
+      <h1 id="hero-title">A remote control for <em>your coding agents.</em></h1>
+      <p class="intro">Werkbord runs on your computer and owns the board, the calendar and the database. Your machines execute Claude Code or Codex. Your phone just connects.</p>
+      <div class="actions">
+        <a class="button" href="#install">Install <span>↓</span></a>
+        <a class="button ghost" href="https://github.com/micho8cho93/werkbord">View on GitHub <span>↗</span></a>
       </div>
-      <div class="hero-note" aria-label="Pi-Student learning promise">
-        <span class="note-symbol">✦</span>
-        <p><strong>Good questions<br>make better builders.</strong><br><small>Bring a rough idea. Leave with understanding.</small></p>
+      <div class="board" aria-hidden="true">
+        <div class="col"><h3>Backlog</h3><p>Add rate limiting</p><p>Fix flaky test</p></div>
+        <div class="col"><h3>Doing</h3><p class="live">Refactor auth <i></i></p></div>
+        <div class="col"><h3>Review</h3><p>Update README</p></div>
+        <div class="col"><h3>Done</h3><p>Migrate to Go 1.27</p></div>
       </div>
     </section>
-    <footer class="hero-footer"><span>CURIOUS MINDS WELCOME</span><span>PI-STUDENT <b>✦</b></span></footer>
+
+    <section id="features" class="section" aria-labelledby="features-title">
+      <p class="eyebrow">WHAT YOU GET</p>
+      <h2 id="features-title">Everything stays on your machines.</h2>
+      <div class="grid">
+        <article><h3>Board per project</h3><p>Backlog, Doing, Review and Done for every repository, plus a Control Center showing what needs you across all of them.</p></article>
+        <article><h3>Agents in worktrees</h3><p>Each run is an interactive session in its own Git worktree. Answer questions, approve actions and send follow-ups from your phone.</p></article>
+        <article><h3>Schedule &amp; orchestrate</h3><p>Plan tasks in a calendar, set priorities and dependencies, and let the controller dispatch them while your browser is closed.</p></article>
+        <article><h3>Multiple runners</h3><p>Pair your own machines and route work by repository access, available agents and capacity.</p></article>
+        <article><h3>Git you can trust</h3><p>Fetch, push, merge and open pull requests with checks that refuse rather than guess. An agent finishing a run never merges.</p></article>
+        <article><h3>Private phone access</h3><p>An embedded Tailscale node reaches the controller from your phone. Nothing is exposed to the Internet.</p></article>
+      </div>
+    </section>
+
+    <section id="install" class="section" aria-labelledby="install-title">
+      <p class="eyebrow">GET STARTED</p>
+      <h2 id="install-title">One command.</h2>
+      <p class="intro">macOS or Linux. It checks the download against its published checksum, sets up the database and a background service, and opens Werkbord in your browser. No Docker, no root.</p>
+      <pre class="code"><code>curl -fsSL https://raw.githubusercontent.com/micho8cho93/werkbord/main/scripts/install.sh | sh</code></pre>
+      <p class="note">Needs <code>git</code>, plus the <code>claude</code> and/or <code>codex</code> CLI to run agents. Windows support is experimental — see the <a href="https://github.com/micho8cho93/werkbord/blob/main/docs/INSTALL.md">install guide</a>.</p>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <span>WERKBORD</span>
+    <a href="https://github.com/micho8cho93/werkbord">github.com/micho8cho93/werkbord</a>
+  </footer>
 </body>
 </html>
